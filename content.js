@@ -35,7 +35,7 @@ window.SITE = {
     { fr: "Co-directeur du département Robotique et IoT du club FREEWAYS", en: "Co-Director of the Robotics and IoT department, FREEWAYS club" },
     { fr: "De la carte PCB à l'IA embarquée sur la cible", en: "From PCB boards to on-device embedded AI" },
     { fr: "Français et anglais courants", en: "Fluent in French and English" },
-    { fr: "Recherche un PFE en France", en: "Looking for an end-of-studies internship in France" }
+    { fr: "Recherche un PFE ", en: "Looking for an end-of-studies internship" }
   ],
 
   interests: [
@@ -93,6 +93,35 @@ window.SITE = {
      (sans photos, la fiche n'affiche pas de galerie)
      ====================================================================== */
   projects: [
+      {
+      slug: "risc16",
+      title: { fr: "Processeur RISC 16 bits", en: "16-bit RISC processor" },
+      domains: ["fpga"],
+      tags: ["VHDL", "Vivado", "ModelSim"],
+      planned: false,
+      overview: {
+        fr: "Processeur RISC 16 bits décrit en VHDL et réparti sur six fichiers, vérifié avec les testbenches fournies pour le cours de modélisation de systèmes, sous Vivado et ModelSim.",
+        en: "A 16-bit RISC processor described in VHDL and split across six files, verified against the testbenches provided for the System Modeling course, in Vivado and ModelSim."
+      },
+      summary: [
+        { fr: "Six modules : registre d'instructions, registre d'état, banc de registres, ALU, unité de contrôle et processeur", en: "Six modules: instruction register, status register, register file, ALU, control unit and processor" },
+        { fr: "Vérifié avec les testbenches du cours de modélisation de systèmes", en: "Verified against the System Modeling course testbenches" }
+      ],
+      sections: [
+        {
+          title: { fr: "Modules", en: "Modules" },
+          items: [
+            { code: "instr_reg",    fr: "registre d'instructions", en: "instruction register" },
+            { code: "status_reg",   fr: "registre d'état", en: "status register" },
+            { code: "reg_file",     fr: "banc de registres", en: "register file" },
+            { code: "alu",          fr: "unité arithmétique et logique", en: "arithmetic logic unit" },
+            { code: "control_unit", fr: "unité de contrôle", en: "control unit" },
+            { code: "proc",         fr: "processeur (assemblage des modules)", en: "processor (top-level assembly)" }
+          ]
+        }
+      ],
+      photos: []
+    },
     {
       slug: "gimbal",
       title: { fr: "Nacelle laser de suivi de ballons", en: "Balloon-tracking laser gimbal" },
@@ -107,6 +136,34 @@ window.SITE = {
         { fr: "Détection d'objets YOLOv5 exécutée sur le Jetson Nano", en: "YOLOv5 object detection running on the Jetson Nano" },
         { fr: "Orientation de la nacelle sur deux axes par servomoteurs", en: "Two-axis gimbal orientation driven by servo motors" },
         { fr: "Développement dans les contraintes de JetPack 4.6 et Python 3.6, qui ont imposé des contournements", en: "Development within the JetPack 4.6 and Python 3.6 constraints, which required workarounds" }
+      ],
+      photos: []
+    },
+     {
+      slug: "parking",
+      title: { fr: "Gestion de parking sur FPGA", en: "FPGA parking management system" },
+      domains: ["fpga"],
+      tags: ["VHDL", "Basys3", "Artix-7"],
+      planned: false,
+      overview: {
+        fr: "Système de gestion de parking décrit en VHDL et déployé sur une carte Basys3 (FPGA Artix-7).",
+        en: "A parking management system described in VHDL and deployed on a Basys3 board (Artix-7 FPGA)."
+      },
+      summary: [
+        { fr: "Simulation par testbench, synthèse puis déploiement sur la carte", en: "Testbench simulation, synthesis, then deployment on the board" },
+        { fr: "Vérification avec les boutons et l'afficheur 7 segments", en: "Verified with the onboard buttons and 7-segment display" }
+      ],
+      sections: [
+        {
+          title: { fr: "Validation", en: "Validation" },
+          ordered: true,
+          items: [
+            { fr: "Simulation par testbench", en: "Testbench simulation" },
+            { fr: "Synthèse", en: "Synthesis" },
+            { fr: "Déploiement sur la carte", en: "Deployment on the board" },
+            { fr: "Vérification avec les boutons et l'afficheur 7 segments de la carte", en: "Verification with the board's buttons and 7-segment display" }
+          ]
+        }
       ],
       photos: []
     },
@@ -158,63 +215,6 @@ window.SITE = {
       summary: [
         { fr: "Traitement d'image avec OpenCV", en: "Image processing with OpenCV" },
         { fr: "Exécution sur Raspberry Pi", en: "Running on Raspberry Pi" }
-      ],
-      photos: []
-    },
-    {
-      slug: "risc16",
-      title: { fr: "Processeur RISC 16 bits", en: "16-bit RISC processor" },
-      domains: ["fpga"],
-      tags: ["VHDL", "Vivado", "ModelSim"],
-      planned: false,
-      overview: {
-        fr: "Processeur RISC 16 bits décrit en VHDL et réparti sur six fichiers, vérifié avec les testbenches fournies pour le cours de modélisation de systèmes, sous Vivado et ModelSim.",
-        en: "A 16-bit RISC processor described in VHDL and split across six files, verified against the testbenches provided for the System Modeling course, in Vivado and ModelSim."
-      },
-      summary: [
-        { fr: "Six modules : registre d'instructions, registre d'état, banc de registres, ALU, unité de contrôle et processeur", en: "Six modules: instruction register, status register, register file, ALU, control unit and processor" },
-        { fr: "Vérifié avec les testbenches du cours de modélisation de systèmes", en: "Verified against the System Modeling course testbenches" }
-      ],
-      sections: [
-        {
-          title: { fr: "Modules", en: "Modules" },
-          items: [
-            { code: "instr_reg",    fr: "registre d'instructions", en: "instruction register" },
-            { code: "status_reg",   fr: "registre d'état", en: "status register" },
-            { code: "reg_file",     fr: "banc de registres", en: "register file" },
-            { code: "alu",          fr: "unité arithmétique et logique", en: "arithmetic logic unit" },
-            { code: "control_unit", fr: "unité de contrôle", en: "control unit" },
-            { code: "proc",         fr: "processeur (assemblage des modules)", en: "processor (top-level assembly)" }
-          ]
-        }
-      ],
-      photos: []
-    },
-    {
-      slug: "parking",
-      title: { fr: "Gestion de parking sur FPGA", en: "FPGA parking management system" },
-      domains: ["fpga"],
-      tags: ["VHDL", "Basys3", "Artix-7"],
-      planned: false,
-      overview: {
-        fr: "Système de gestion de parking décrit en VHDL et déployé sur une carte Basys3 (FPGA Artix-7).",
-        en: "A parking management system described in VHDL and deployed on a Basys3 board (Artix-7 FPGA)."
-      },
-      summary: [
-        { fr: "Simulation par testbench, synthèse puis déploiement sur la carte", en: "Testbench simulation, synthesis, then deployment on the board" },
-        { fr: "Vérification avec les boutons et l'afficheur 7 segments", en: "Verified with the onboard buttons and 7-segment display" }
-      ],
-      sections: [
-        {
-          title: { fr: "Validation", en: "Validation" },
-          ordered: true,
-          items: [
-            { fr: "Simulation par testbench", en: "Testbench simulation" },
-            { fr: "Synthèse", en: "Synthesis" },
-            { fr: "Déploiement sur la carte", en: "Deployment on the board" },
-            { fr: "Vérification avec les boutons et l'afficheur 7 segments de la carte", en: "Verification with the board's buttons and 7-segment display" }
-          ]
-        }
       ],
       photos: []
     },
@@ -300,30 +300,6 @@ window.SITE = {
     { family: { fr: "Vision et IA embarquée", en: "Vision and embedded AI" }, items: ["OpenCV", "YOLO", "ONNX Runtime", { fr: "Déploiement edge AI", en: "Edge AI deployment" }] },
     { family: { fr: "Conception PCB", en: "PCB design" }, items: ["EasyEDA"] },
     { family: { fr: "En exploration", en: "Exploring" }, items: [{ fr: "Agents IA", en: "AI agents" }, "ReAct", "LangChain", "RAG"] }
-  ],
-
-  /* PARCOURS */
-  background: [
-    {
-      period: "2027",
-      role: { fr: "Diplôme d'ingénieur (prévu)", en: "Engineering degree (expected)" },
-      desc: { fr: "Systèmes embarqués, Institut Supérieur d'Informatique (ISI), Université Tunis El Manar.", en: "Embedded Systems, Institut Supérieur d'Informatique (ISI), Université Tunis El Manar." }
-    },
-    {
-      period: { fr: "En cours", en: "Ongoing" },
-      role: { fr: "Stage industriel", en: "Industry internship" },
-      desc: { fr: "Vision par ordinateur embarquée et edge AI.", en: "Embedded computer vision and edge AI." }
-    },
-    {
-      period: { fr: "En cours", en: "Ongoing" },
-      role: { fr: "Co-directeur Robotique et IoT", en: "Co-Director, Robotics and IoT" },
-      desc: { fr: "Club FREEWAYS : pilotage du département et formation des étudiants.", en: "FREEWAYS club: running the department and training students." }
-    },
-    {
-      period: { fr: "Stages précédents", en: "Previous internships" },
-      role: "Civil Healer, Tunisair Technics, STEG",
-      desc: { fr: "Dont un système domotique sur PCB chez Civil Healer.", en: "Including a PCB-based smart home system at Civil Healer." }
-    }
   ],
 
   /* CONTACT : label = le canal, text = ce qui est affiché, href = le lien.
