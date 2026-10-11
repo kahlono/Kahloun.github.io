@@ -97,7 +97,7 @@ window.SITE = {
       slug: "gimbal",
       title: { fr: "Nacelle laser de suivi de ballons", en: "Balloon-tracking laser gimbal" },
       domains: ["vision", "iot"],
-      tags: ["Jetson Nano", "YOLOv5", "Servos"],
+      tags: ["Jetson Nano", , "Servo Motors", "YOLOv5", "3D design" ],
       planned: false,
       overview: {
         fr: "Nacelle à deux axes qui suit des ballons et pointe un laser sur eux. La détection repose sur YOLOv5, exécuté sur un Jetson Nano, et deux servomoteurs orientent la nacelle.",
@@ -114,14 +114,15 @@ window.SITE = {
       slug: "robot-vocal",
       title: { fr: "Robot IoT à commande vocale", en: "Voice-controlled IoT robot" },
       domains: ["iot"],
-      tags: ["Raspberry Pi", "LLaMA", "Vosk"],
+      tags: ["Raspberry Pi", "ESP32", "Vosk", "LLaMA", "DC Motors", "BMC"],
       planned: false,
       overview: {
-        fr: "Robot IoT que l'on commande à la voix, construit autour d'un Raspberry Pi. Il combine la reconnaissance vocale Vosk et un modèle de langage LLaMA.",
-        en: "An IoT robot controlled by voice, built around a Raspberry Pi. It combines Vosk speech recognition with a LLaMA language model."
+        fr: "Robot IoT que l'on commande à la voix, construit par deux cartes un Raspberry Pi qui est le cerveau et la carte esp32 qui commandeles motors de deplacement. Il combine la commande vocale Vosk et un modèle de langage LLaMA.",
+        en: "An IoT robot controlled by voice, built with Raspberry Pi which is the brain of our system and esp32 that command our motors. It combines Vosk speech command with a LLaMA language model."
       },
       summary: [
         { fr: "Raspberry Pi comme unité centrale du robot", en: "Raspberry Pi as the robot's central unit" },
+        { fr: "ESP32 pour la commnade des roues motrices",  en: "ESP32 for controlling the wheels " },
         { fr: "Vosk pour la reconnaissance vocale", en: "Vosk for speech recognition" },
         { fr: "Modèle LLaMA intégré au robot", en: "LLaMA model integrated into the robot" }
       ],
@@ -129,16 +130,16 @@ window.SITE = {
     },
     {
       slug: "domotique",
-      title: { fr: "Assistant domotique IoT", en: "IoT smart home assistant" },
+      title: { fr: "Systeme de securite et controle de climatisation via une application mobile ", en: "Security and climate control system with a mobile app" },
       domains: ["iot"],
-      tags: ["ESP32", "MQTT", "Firebase", "Angular", "Ionic"],
+      tags: ["Angular", "Ionic", "Firebase", "Android", "ESP32", "EasyEDA", "Carte PCB", "SolidWorks"],
       planned: false,
       overview: {
-        fr: "Assistant de maison connectée : des ESP32 échangent leurs données en MQTT, stockées dans Firebase et exploitées par une application Angular et Ionic.",
-        en: "A connected-home assistant: ESP32 boards exchange data over MQTT, stored in Firebase and used by an Angular and Ionic app."
+        fr: "le systeme est constituer par 2 boitier la premier a le role de securiter contre les incendie et Asphyxie par gaz et la deuxiemepour le controle de climatisation et son consomation en temps reel, stockées dans Firebase et exploitées par une application Angular et Ionic.",
+        en: "The system consists of two units: the first acts as a safety device against fire and gas asphyxiation, while the second controls the air conditioning system and monitors its real-time energy consumption."
       },
       summary: [
-        { fr: "ESP32 communiquant en MQTT", en: "ESP32 communicating over MQTT" },
+        { fr: "Deux ESP32 communiquant en HTTP", en: " Two ESP32 communicating over HTTP" },
         { fr: "Firebase pour le stockage des données", en: "Firebase for data storage" },
         { fr: "Application Angular et Ionic", en: "Angular and Ionic application" }
       ],
@@ -157,22 +158,6 @@ window.SITE = {
       summary: [
         { fr: "Traitement d'image avec OpenCV", en: "Image processing with OpenCV" },
         { fr: "Exécution sur Raspberry Pi", en: "Running on Raspberry Pi" }
-      ],
-      photos: []
-    },
-    {
-      slug: "pcb",
-      title: { fr: "Système domotique sur PCB", en: "PCB-based smart home system" },
-      domains: ["iot"],
-      tags: ["EasyEDA", "PCB"],
-      planned: false,
-      overview: {
-        fr: "Système domotique conçu sur carte électronique (PCB) pendant un stage chez Civil Healer, avec EasyEDA comme outil de conception.",
-        en: "A smart home system designed on a printed circuit board (PCB) during an internship at Civil Healer, using EasyEDA as the design tool."
-      },
-      summary: [
-        { fr: "Conception de la carte sous EasyEDA", en: "Board design in EasyEDA" },
-        { fr: "Réalisé dans le cadre d'un stage chez Civil Healer", en: "Done as part of an internship at Civil Healer" }
       ],
       photos: []
     },
@@ -303,33 +288,6 @@ window.SITE = {
       ],
       photos: []
     },
-    {
-      slug: "mpu6050",
-      title: { fr: "Framework de pilotes MPU6050", en: "MPU6050 driver framework" },
-      domains: ["iot"],
-      tags: ["STM32", "C++", "FreeRTOS", "Qt"],
-      planned: true,
-      overview: {
-        fr: "Framework de pilotes pour le capteur MPU6050 sur STM32 : le projet est cadré mais pas encore démarré.",
-        en: "A driver framework for the MPU6050 sensor on STM32: the project is scoped but not started yet."
-      },
-      summary: [
-        { fr: "Pilote C++ orienté objet et FreeRTOS StaticQueue", en: "Object-oriented C++ driver with FreeRTOS StaticQueue" },
-        { fr: "Protocole UART binaire avec CRC8 et application hôte Qt", en: "Binary UART protocol with CRC8 and a Qt host application" }
-      ],
-      sections: [
-        {
-          title: { fr: "Périmètre prévu", en: "Planned scope" },
-          items: [
-            { fr: "Pilote C++ orienté objet", en: "Object-oriented C++ driver" },
-            { fr: "FreeRTOS StaticQueue", en: "FreeRTOS StaticQueue" },
-            { fr: "Protocole UART binaire avec CRC8", en: "Binary UART protocol with CRC8" },
-            { fr: "Application hôte Qt", en: "Qt host application" }
-          ]
-        }
-      ],
-      photos: []
-    }
   ],
 
   /* COMPÉTENCES : une ligne par famille. Les éléments sont des textes simples. */
