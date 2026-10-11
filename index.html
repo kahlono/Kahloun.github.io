@@ -68,8 +68,7 @@ h2.dh{font-size:15px;font-weight:700;margin:0 0 10px;padding-bottom:6px;border-b
 
 section{padding:56px 0;border-bottom:1px solid var(--rule)}
 section:last-of-type{border-bottom:0}
-.sh{display:flex;align-items:baseline;gap:14px;margin:0 0 24px}
-.sn{font-family:var(--mono);font-size:15px;color:var(--accent)}
+.sh{margin:0 0 24px}
 h2.st{margin:0;font-weight:800;font-stretch:78%;font-size:clamp(30px,4.5vw,44px);line-height:1}
 .lead{max-width:68ch;margin:0 0 14px}
 
@@ -83,14 +82,27 @@ td.nm{font-weight:700;width:26%}
 td.pl{width:24%}
 .skills td.nm{width:30%}
 .tag{display:inline-block;font-family:var(--mono);font-size:13px;line-height:1.3;background:var(--chip);border:1px solid var(--rule);border-radius:2px;padding:2px 7px;margin:0 6px 6px 0;color:var(--ink)}
-td ul{margin:0;padding:0 0 0 18px}
-td li{margin:0 0 4px}
-td li::marker{color:var(--accent)}
 .plan{display:inline-block;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--signal);border:1px solid var(--signal);border-radius:2px;padding:0 6px;margin-left:8px;vertical-align:middle}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
 a.plink{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-decoration-thickness:2px;text-underline-offset:4px}
 a.plink:hover{color:var(--accent);text-decoration-color:var(--accent)}
-#rows tr{cursor:pointer}
+
+/* cartes de projets */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--sheet);border:1px solid var(--rule);border-radius:2px;padding:20px;cursor:pointer;transition:border-color .15s}
+.card:hover{border-color:var(--accent)}
+.card:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.card img{display:block;width:calc(100% + 40px);height:160px;object-fit:cover;margin:-20px -20px 16px;border-bottom:1px solid var(--rule)}
+.card .dom{font-size:14px;color:var(--muted);margin:0 0 8px}
+.card h3{margin:0 0 10px;font-size:22px;font-weight:800;font-stretch:80%;line-height:1.15}
+.card h3 a.plink{text-decoration:none}
+.card h3 a.plink:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.card h3 a.plink::after{content:"";position:absolute;inset:0}
+.card ul{margin:0 0 14px;padding:0 0 0 18px;font-size:15.5px}
+.card li{margin:0 0 4px}
+.card li::marker{color:var(--accent)}
+.card .ctags{margin-top:auto;padding-top:6px}
+.card .more{margin-top:10px;font-size:14px;font-weight:600;color:var(--accent)}
 
 .proj{padding:40px 0 56px}
 .back{margin:0 0 20px;font-size:15px}
@@ -127,6 +139,7 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
 }
 @media (max-width:720px){
   main,.bar-in,footer{padding-left:18px;padding-right:18px}
+  .cards{grid-template-columns:1fr}
   table,thead,tbody,tr,td,th{display:block;width:100%}
   thead{position:absolute;left:-9999px}
   tr{border-top:2px solid var(--ink);padding:12px 0}
@@ -158,14 +171,12 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
       rev: "Rév.", revision: "révision", theme: "Thème", langBtn: "EN", skip: "Aller au contenu",
       nDesc: "Description", nProj: "Projets", nSkills: "Compétences", nBg: "Parcours", nContact: "Contact",
       features: "Caractéristiques", interests: "Domaines d'intérêt",
-      figure: "Figure 1. Brochage : les compétences clés, détaillées section 3.",
+      figure: "Figure 1. Brochage : les compétences clés, détaillées dans la section Compétences.",
       hDesc: "Description", hProj: "Projets", hSkills: "Compétences", hBg: "Parcours", hContact: "Contact",
-      all: "Tous", filterLabel: "Filtrer les projets",
-      cap1: "Tableau 1. Projets réalisés et planifiés. Cliquez sur un projet pour ouvrir sa fiche détaillée.",
-      thProject: "Projet", thPlatform: "Plateforme et outils", thDetails: "Détails",
-      cap2: "Tableau 2. Description des brochages : compétences par famille.", thFamily: "Famille", thItems: "Éléments",
-      cap3: "Tableau 3. Historique des révisions.", thPeriod: "Période", thRole: "Rôle", thDesc: "Description",
-      cap4: "Tableau 4. Informations de contact.", thChannel: "Canal", thCDetails: "Coordonnées",
+      all: "Tous", filterLabel: "Filtrer les projets", open: "Voir la fiche",
+      cap2: "Tableau 1. Description des brochages : compétences par famille.", thFamily: "Famille", thItems: "Éléments",
+      cap3: "Tableau 2. Historique des révisions.", thPeriod: "Période", thRole: "Rôle", thDesc: "Description",
+      cap4: "Tableau 3. Informations de contact.", thChannel: "Canal", thCDetails: "Coordonnées",
       planned: "Planifié", back: "Retour aux projets", overview: "Aperçu", keyPoints: "Points clés",
       domain: "Domaine", platform: "Plateforme et outils", photos: "Photos",
       prev: "Projet précédent : ", next: "Projet suivant : "
@@ -174,14 +185,12 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
       rev: "Rev.", revision: "revision", theme: "Theme", langBtn: "FR", skip: "Skip to content",
       nDesc: "Description", nProj: "Projects", nSkills: "Skills", nBg: "Background", nContact: "Contact",
       features: "Features", interests: "Areas of interest",
-      figure: "Figure 1. Pin configuration: key skills, detailed in section 3.",
+      figure: "Figure 1. Pin configuration: key skills, detailed in the Skills section.",
       hDesc: "Description", hProj: "Projects", hSkills: "Skills", hBg: "Background", hContact: "Contact",
-      all: "All", filterLabel: "Filter projects",
-      cap1: "Table 1. Completed and planned projects. Click a project to open its detail page.",
-      thProject: "Project", thPlatform: "Platform and tools", thDetails: "Details",
-      cap2: "Table 2. Pin descriptions: skills by family.", thFamily: "Family", thItems: "Items",
-      cap3: "Table 3. Revision history.", thPeriod: "Period", thRole: "Role", thDesc: "Description",
-      cap4: "Table 4. Contact information.", thChannel: "Channel", thCDetails: "Details",
+      all: "All", filterLabel: "Filter projects", open: "View details",
+      cap2: "Table 1. Pin descriptions: skills by family.", thFamily: "Family", thItems: "Items",
+      cap3: "Table 2. Revision history.", thPeriod: "Period", thRole: "Role", thDesc: "Description",
+      cap4: "Table 3. Contact information.", thChannel: "Channel", thCDetails: "Details",
       planned: "Planned", back: "Back to projects", overview: "Overview", keyPoints: "Key points",
       domain: "Domain", platform: "Platform and tools", photos: "Photos",
       prev: "Previous project: ", next: "Next project: "
@@ -219,8 +228,11 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
   function tags(a) {
     return (a || []).map(function (x) { return '<span class="tag">' + T(x) + '</span>'; }).join('');
   }
-  function sh(n, key) {
-    return '<div class="sh"><span class="sn">' + n + '</span><h2 class="st">' + u(key) + '</h2></div>';
+  function sh(key) {
+    return '<div class="sh"><h2 class="st">' + u(key) + '</h2></div>';
+  }
+  function domainsOf(p) {
+    return (p.domains || []).map(function (k) { return S.domains && S.domains[k] ? T(S.domains[k]) : esc(k); }).join(', ');
   }
 
   function header() {
@@ -275,35 +287,36 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
   function listMain() {
     var h = cover();
 
-    h += '<section id="description">' + sh(1, 'hDesc')
+    h += '<section id="description">' + sh('hDesc')
       + (S.about || []).map(function (p) { return '<p class="lead">' + T(p) + '</p>'; }).join('') + '</section>';
 
     var f = '<button class="btn" type="button" data-f="all" aria-pressed="' + (filter === 'all') + '">' + u('all') + '</button>';
     Object.keys(S.domains || {}).forEach(function (k) {
       f += '<button class="btn" type="button" data-f="' + esc(k) + '" aria-pressed="' + (filter === k) + '">' + T(S.domains[k]) + '</button>';
     });
-    var rows = S.projects.filter(function (p) {
+    var cards = S.projects.filter(function (p) {
       return filter === 'all' || (p.domains || []).indexOf(filter) > -1;
     }).map(function (p) {
-      return '<tr data-slug="' + esc(p.slug) + '">'
-        + '<td class="nm"><a class="plink" href="#projet/' + esc(p.slug) + '">' + T(p.title) + '</a>'
-        + (p.planned ? '<span class="plan">' + u('planned') + '</span>' : '') + '</td>'
-        + '<td class="pl">' + tags(p.tags) + '</td>'
-        + '<td><ul>' + items(p.summary) + '</ul></td></tr>';
+      var img = (p.photos && p.photos.length)
+        ? '<img src="' + href(p.photos[0].src) + '" alt="" loading="lazy">' : '';
+      return '<article class="card">' + img
+        + '<p class="dom">' + domainsOf(p) + (p.planned ? '<span class="plan">' + u('planned') + '</span>' : '') + '</p>'
+        + '<h3><a class="plink" href="#projet/' + esc(p.slug) + '">' + T(p.title) + '</a></h3>'
+        + '<ul>' + items((p.summary || []).slice(0, 2)) + '</ul>'
+        + '<div class="ctags">' + tags(p.tags) + '</div>'
+        + '<span class="more">' + u('open') + '</span></article>';
     }).join('');
-    h += '<section id="projets">' + sh(2, 'hProj')
+    h += '<section id="projets">' + sh('hProj')
       + '<div class="filters" role="group" aria-label="' + u('filterLabel') + '">' + f + '</div>'
-      + '<div class="tw"><table><caption>' + u('cap1') + '</caption>'
-      + '<thead><tr><th scope="col">' + u('thProject') + '</th><th scope="col">' + u('thPlatform') + '</th><th scope="col">' + u('thDetails') + '</th></tr></thead>'
-      + '<tbody id="rows">' + rows + '</tbody></table></div></section>';
+      + '<div class="cards">' + cards + '</div></section>';
 
-    h += '<section id="competences">' + sh(3, 'hSkills')
+    h += '<section id="competences">' + sh('hSkills')
       + '<div class="tw"><table class="skills"><caption>' + u('cap2') + '</caption>'
       + '<thead><tr><th scope="col">' + u('thFamily') + '</th><th scope="col">' + u('thItems') + '</th></tr></thead><tbody>'
       + (S.skills || []).map(function (s) { return '<tr><td class="nm">' + T(s.family) + '</td><td>' + tags(s.items) + '</td></tr>'; }).join('')
       + '</tbody></table></div></section>';
 
-    h += '<section id="parcours">' + sh(4, 'hBg')
+    h += '<section id="parcours">' + sh('hBg')
       + '<div class="tw"><table><caption>' + u('cap3') + '</caption>'
       + '<thead><tr><th scope="col">' + u('thPeriod') + '</th><th scope="col">' + u('thRole') + '</th><th scope="col">' + u('thDesc') + '</th></tr></thead><tbody>'
       + (S.background || []).map(function (b) {
@@ -311,7 +324,7 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
         }).join('')
       + '</tbody></table></div></section>';
 
-    h += '<section id="contact">' + sh(5, 'hContact')
+    h += '<section id="contact">' + sh('hContact')
       + '<div class="tw"><table><caption>' + u('cap4') + '</caption>'
       + '<thead><tr><th scope="col">' + u('thChannel') + '</th><th scope="col">' + u('thCDetails') + '</th></tr></thead><tbody>'
       + (S.contact || []).map(function (c) {
@@ -325,7 +338,6 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
 
   function detailMain(p) {
     var L = S.projects, i = L.indexOf(p), prev = L[i - 1], next = L[i + 1];
-    var dom = (p.domains || []).map(function (k) { return S.domains && S.domains[k] ? T(S.domains[k]) : esc(k); }).join(', ');
     var body = '<h3>' + u('overview') + '</h3><p>' + T(p.overview) + '</p>';
 
     var secs = p.sections || [{ title: UI[lang].keyPoints, items: p.summary }];
@@ -354,7 +366,7 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
       + '<p class="back"><a href="#projets">' + u('back') + '</a></p>'
       + '<h2 class="pt">' + T(p.title) + (p.planned ? '<span class="plan">' + u('planned') + '</span>' : '') + '</h2>'
       + '<div class="pgrid"><div class="pmain">' + body + '</div>'
-      + '<aside><dl class="fiche"><dt>' + u('domain') + '</dt><dd>' + dom + '</dd>'
+      + '<aside><dl class="fiche"><dt>' + u('domain') + '</dt><dd>' + domainsOf(p) + '</dd>'
       + '<dt>' + u('platform') + '</dt><dd>' + tags(p.tags) + '</dd></dl></aside></div>'
       + gal
       + '<nav class="pn" aria-label="' + u('nProj') + '">'
@@ -393,23 +405,20 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
   }
 
   app.addEventListener('click', function (e) {
-    var el = e.target;
-    var btn = el.closest ? el.closest('button') : null;
-    if (btn && btn.id === 'langBtn') {
+    var btn = e.target.closest ? e.target.closest('button') : null;
+    if (!btn) return;
+    if (btn.id === 'langBtn') {
       lang = lang === 'fr' ? 'en' : 'fr';
       store('lang', lang);
       redraw('#langBtn');
-    } else if (btn && btn.id === 'themeBtn') {
+    } else if (btn.id === 'themeBtn') {
       var cur = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       var nx = cur === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', nx);
       store('theme', nx);
-    } else if (btn && btn.hasAttribute('data-f')) {
+    } else if (btn.hasAttribute('data-f')) {
       filter = btn.getAttribute('data-f');
       redraw('[data-f="' + filter + '"]');
-    } else {
-      var tr = el.closest ? el.closest('tr[data-slug]') : null;
-      if (tr && !el.closest('a')) location.hash = '#projet/' + tr.getAttribute('data-slug');
     }
   });
 
