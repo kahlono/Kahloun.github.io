@@ -183,7 +183,7 @@ window.SITE = {
         { fr: "Vosk pour la reconnaissance vocale", en: "Vosk for speech recognition" },
         { fr: "Modèle LLaMA intégré au robot", en: "LLaMA model integrated into the robot" }
       ],
-      photos: []
+      photos: [{ src: "Robot_home.jpeg"}]
     },
     {
       slug: "domotique",
