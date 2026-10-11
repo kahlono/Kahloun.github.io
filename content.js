@@ -301,7 +301,28 @@ window.SITE = {
     { family: { fr: "Conception PCB", en: "PCB design" }, items: ["EasyEDA"] },
     { family: { fr: "En exploration", en: "Exploring" }, items: [{ fr: "Agents IA", en: "AI agents" }, "ReAct", "LangChain", "RAG"] }
   ],
-
+   
+  /* PARCOURS : une ligne par étape, du plus ancien au plus récent. */
+  background: [
+     {
+      period: { fr: "2024 – 2027 (en cours)", en: "2024 – 2027 (ongoing)" },
+      role: { fr: "Cycle ingénieur", en: "Engineering degree" },
+      desc: { fr: "Systèmes embarqués et IoT, Institut Supérieur d'Informatique (ISI), Université Tunis El Manar.", en: "Embedded Systems and IoT, Institut Supérieur d'Informatique (ISI), Université Tunis El Manar." }
+    },
+    
+    {
+      period: "2021 – 2024",
+      role: { fr: "Licence", en: "Bachelor's degree" },
+      desc: { fr: "Systèmes embarqués, électronique et électrotechnique.", en: "Embedded systems, electronics and electrical engineering." }
+    },
+     {
+      period: "2021",
+      role: { fr: "Baccalauréat sciences techniques", en: "Technical Sciences Baccalaureate" },
+      desc: { fr: "Moyenne de 15,5/20.", en: "Overall grade of 15.5/20." }
+    }
+    
+  ],
+   
   /* CONTACT : label = le canal, text = ce qui est affiché, href = le lien.
      Sans href, le texte n'est pas cliquable. */
   contact: [
