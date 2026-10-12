@@ -185,38 +185,81 @@ window.SITE = {
       ],
       photos: [{ src: "Robot_home.jpeg" }]
     },
-    {
+        {
       slug: "domotique",
       title: { fr: "Système de sécurité et de contrôle de climatisation par application mobile", en: "Security and climate control system with a mobile app" },
       domains: ["iot"],
       tags: ["Angular", "Ionic", "Firebase", "Android", "ESP32", "EasyEDA", { fr: "Carte PCB", en: "PCB board" }, "SolidWorks"],
       planned: false,
       overview: {
-        fr: "Le système est composé de deux boîtiers : le premier assure la sécurité contre les incendies et l'asphyxie au gaz, le second commande la climatisation et suit sa consommation en temps réel. Les données sont stockées dans Firebase et exploitées par une application Angular et Ionic.",
-        en: "The system consists of two units: the first acts as a safety device against fire and gas asphyxiation, while the second controls the air conditioning and monitors its real-time energy consumption. Data is stored in Firebase and used by an Angular and Ionic app."
+        fr: "Le système est composé de deux boîtiers : un boîtier actionneur, qui ouvre, ferme et calcule la consommation, et un boîtier capteur, qui fournit toutes les caractéristiques de l'environnement. Une application mobile permet de suivre la consommation et la sécurité de la chambre face à la toxicité de l'air (CO et CO2), ainsi que la température et l'humidité.",
+        en: "The system consists of two units: an actuator unit, which opens, closes and computes energy consumption, and a sensor unit, which provides all the characteristics of the environment. A mobile app tracks consumption and the room's safety against air toxicity (CO and CO2), as well as temperature and humidity."
       },
       summary: [
-        { fr: "Deux ESP32 communiquant en HTTP", en: "Two ESP32 boards communicating over HTTP" },
-        { fr: "Firebase pour le stockage des données", en: "Firebase for data storage" },
-        { fr: "Application Angular et Ionic", en: "Angular and Ionic application" }
+        { fr: "Boîtier actionneur : ouvre, ferme et calcule la consommation", en: "Actuator unit: opens, closes and computes consumption" },
+        { fr: "Boîtier capteur : fournit toutes les caractéristiques de l'environnement", en: "Sensor unit: provides all environment characteristics" },
+        { fr: "Application mobile Angular et Ionic pour le suivi en temps réel", en: "Angular and Ionic mobile app for real-time monitoring" }
       ],
-      photos: [{ src: "3D_boitie.png" }]
+      sections: [
+        {
+          title: { fr: "Architecture", en: "Architecture" },
+          items: [
+            { fr: "Deux ESP32 communiquant en HTTP", en: "Two ESP32 boards communicating over HTTP" },
+            { fr: "Firebase pour le stockage des données", en: "Firebase for data storage" },
+            { fr: "Application Angular et Ionic", en: "Angular and Ionic application" }
+          ]
+        },
+        {
+          title: { fr: "Boîtier actionneur", en: "Actuator unit" },
+          items: [
+            { fr: "Ouverture et fermeture (commande de la climatisation)", en: "Opening and closing (air conditioning control)" },
+            { fr: "Calcul de la consommation", en: "Energy consumption calculation" }
+          ]
+        },
+        {
+          title: { fr: "Boîtier capteur", en: "Sensor unit" },
+          items: [
+            { fr: "Fournit toutes les caractéristiques de l'environnement", en: "Provides all the characteristics of the environment" },
+            { fr: "Mesures : température, humidité, CO2 et CO", en: "Measurements: temperature, humidity, CO2 and CO" },
+            { fr: "Sécurité de la chambre contre la toxicité de l'air et contre les incendies", en: "Room safety against air toxicity and fire" }
+          ]
+        },
+        {
+          title: { fr: "Application mobile", en: "Mobile app" },
+          items: [
+            { fr: "Connexion et inscription des utilisateurs", en: "User sign-in and sign-up" },
+            { fr: "Suivi de la consommation en kWh", en: "Consumption tracking in kWh" },
+            { fr: "Suivi de la qualité de l'air : CO2 en ppm et CO", en: "Air quality tracking: CO2 in ppm and CO" },
+            { fr: "Température en °C et humidité en %", en: "Temperature in °C and humidity in %" }
+          ]
+        }
+      ],
+      photos: [
+        { src: "3D_boitie.png" },
+        { src: "landing_page.jpeg", caption: { fr: "Application : page d'accueil", en: "App: landing page" } },
+        { src: "welcom_page.jpeg", caption: { fr: "Application : connexion", en: "App: sign-in" } },
+        { src: "info_page.jpeg", caption: { fr: "Application : consommation, température, humidité, CO2 et CO", en: "App: consumption, temperature, humidity, CO2 and CO" } }
+      ]
     },
-    {
+       {
       slug: "bras",
       title: { fr: "Bras robotique avec vision par ordinateur", en: "Robotic arm with computer vision" },
       domains: ["vision"],
       tags: ["Raspberry Pi", "OpenCV"],
       planned: false,
       overview: {
-        fr: "Bras robotique doté de vision par ordinateur, avec un traitement d'image OpenCV exécuté sur Raspberry Pi.",
-        en: "A robotic arm with computer vision, using OpenCV image processing running on a Raspberry Pi."
+        fr: "Bras robotique doté de vision par ordinateur. Une caméra fixe observe la scène, et le bras identifie chaque objet grâce à un code-barres collé dessus. Il le ramasse puis le dépose en dehors d'une zone prédéfinie. Le traitement d'image OpenCV est exécuté sur Raspberry Pi.",
+        en: "A robotic arm with computer vision. A fixed camera observes the scene, and the arm identifies each object through a barcode stuck on it. It picks the object up and places it outside a predefined zone. OpenCV image processing runs on a Raspberry Pi."
       },
       summary: [
-        { fr: "Traitement d'image avec OpenCV", en: "Image processing with OpenCV" },
-        { fr: "Exécution sur Raspberry Pi", en: "Running on Raspberry Pi" }
+        { fr: "Caméra fixe observant la scène", en: "Fixed camera observing the scene" },
+        { fr: "Identification des objets par un code-barres collé dessus", en: "Objects identified through a barcode stuck on them" },
+        { fr: "Ramassage de l'objet puis dépôt en dehors d'une zone prédéfinie", en: "Picks up the object and places it outside a predefined zone" },
+        { fr: "Traitement d'image avec OpenCV sur Raspberry Pi", en: "Image processing with OpenCV on Raspberry Pi" }
       ],
-      photos: []
+      photos: [
+        { src: "Bras-robot.png", caption: { fr: "Le bras robotique et un objet portant son code", en: "The robotic arm and an object carrying its code" } }
+      ]
     },
     {
       slug: "fifo",
