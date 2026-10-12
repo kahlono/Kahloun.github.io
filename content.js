@@ -27,7 +27,7 @@ window.SITE = {
   /* Le composant dessiné en haut à droite : 12 broches.
      Broches 1 à 6 = côté gauche (de haut en bas),
      broches 7 à 12 = côté droit (de bas en haut). */
-  chip: { name: "MOK", line1: "Embedded Systems", line2: "ISI 2027" },
+  chip: { name: "Kahloun", line1: "Embedded Systems", line2: "ISI 2027" },
   pins: ["STM32", "ESP32", "RPi", "Jetson", "UART", "SPI", "I2C", "CAN", "MQTT", "RTOS", "VHDL", "Edge AI"],
 
   features: [
