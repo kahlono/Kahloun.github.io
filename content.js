@@ -137,7 +137,7 @@ window.SITE = {
         { fr: "Orientation de la nacelle sur deux axes par servomoteurs", en: "Two-axis gimbal orientation driven by servo motors" },
         { fr: "Développement dans les contraintes de JetPack 4.6 et Python 3.6, qui ont imposé des contournements", en: "Development within the JetPack 4.6 and Python 3.6 constraints, which required workarounds" }
       ],
-      photos: []
+      photos: [{ src: "Capture_gimbal.png" }]
     },
      {
       slug: "parking",
@@ -200,7 +200,7 @@ window.SITE = {
         { fr: "Firebase pour le stockage des données", en: "Firebase for data storage" },
         { fr: "Application Angular et Ionic", en: "Angular and Ionic application" }
       ],
-      photos: [src: "carte_pcb.jpg"]
+      photos: [{src: "3D_boitie.png"}]
     },
     {
       slug: "bras",
