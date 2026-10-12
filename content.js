@@ -258,7 +258,7 @@ window.SITE = {
         { fr: "Traitement d'image avec OpenCV sur Raspberry Pi", en: "Image processing with OpenCV on Raspberry Pi" }
       ],
       photos: [
-        { src: "Bras-robot.png", caption: { fr: "Le bras robotique et un objet portant son code", en: "The robotic arm and an object carrying its code" } }
+        { src: "Bras_robot.png" }
       ]
     },
     {
