@@ -32,10 +32,10 @@ window.SITE = {
 
   features: [
     { fr: "Dernière année d'ingénierie Systèmes Embarqués à l'ISI, promotion 2027", en: "Final-year Embedded Systems engineering student at ISI, class of 2027" },
-    { fr: "Co-directeur du département Robotique et IoT du club FREEWAYS", en: "Co-Director of the Robotics and IoT department, FREEWAYS club" },
+    { fr: "Ancien co-directeur du département Robotique et IoT du club FREEWAYS", en: "Former Co-Director of the Robotics and IoT department, FREEWAYS club" },
     { fr: "De la carte PCB à l'IA embarquée sur la cible", en: "From PCB boards to on-device embedded AI" },
     { fr: "Français et anglais courants", en: "Fluent in French and English" },
-    { fr: "Recherche un PFE ", en: "Looking for an end-of-studies internship" }
+    { fr: "Recherche un PFE", en: "Looking for an end-of-studies internship" }
   ],
 
   interests: [
@@ -53,8 +53,8 @@ window.SITE = {
       en: "I am a final-year Embedded Systems engineering student at the Institut Supérieur d'Informatique (ISI), Université Tunis El Manar. I build systems end to end: board design, C and C++ firmware, device-to-device communication, then artificial intelligence on the target."
     },
     {
-      fr: "Je co-dirige le département Robotique et IoT du club FREEWAYS, où je forme aussi d'autres étudiants. Je suis actuellement en stage industriel, sur un travail de vision par ordinateur embarquée et d'edge AI.",
-      en: "I co-direct the Robotics and IoT department of the FREEWAYS club, where I also train other students. I am currently doing an industry internship on embedded computer vision and edge AI."
+      fr: "J'ai co-dirigé le département Robotique et IoT du club FREEWAYS, où j'ai formé de nouveaux étudiants. J'ai aussi effectué un stage industriel en vision par ordinateur embarquée et edge AI.",
+      en: "I co-directed the Robotics and IoT department of the FREEWAYS club, where I trained new students. I also completed an industry internship in embedded computer vision and edge AI."
     }
   ],
 
@@ -78,11 +78,11 @@ window.SITE = {
        domains  une ou plusieurs clés : "iot", "vision", "fpga"
        tags     plateforme et outils (affichés en étiquettes)
        planned  true si le projet est seulement planifié, sinon false
-       summary  les points clés (tableau + fiche détaillée)
+       summary  les points clés (carte + fiche détaillée)
        overview le paragraphe d'aperçu de la fiche
        sections (optionnel) remplace les "Points clés" par tes propres sections.
                 Un item peut avoir un champ "code" pour afficher une étiquette.
-       links    (optionnel) liens vers GitHub, une démo, etc.
+       links    (optionnel) liens vers GitHub, un PDF, une démo, etc.
        photos   (optionnel) liste de photos, voir l'exemple ci-dessous.
 
      PHOTOS : mets tes images dans le dossier "images" du dépôt, puis écris :
@@ -93,7 +93,7 @@ window.SITE = {
      (sans photos, la fiche n'affiche pas de galerie)
      ====================================================================== */
   projects: [
-      {
+    {
       slug: "risc16",
       title: { fr: "Processeur RISC 16 bits", en: "16-bit RISC processor" },
       domains: ["fpga"],
@@ -126,7 +126,7 @@ window.SITE = {
       slug: "gimbal",
       title: { fr: "Nacelle laser de suivi de ballons", en: "Balloon-tracking laser gimbal" },
       domains: ["vision", "iot"],
-      tags: ["Jetson Nano", "Servo Motors", "YOLOv5", "3D design" ],
+      tags: ["Jetson Nano", "Servo Motors", "YOLOv5", "3D design"],
       planned: false,
       overview: {
         fr: "Nacelle à deux axes qui suit des ballons et pointe un laser sur eux. La détection repose sur YOLOv5, exécuté sur un Jetson Nano, et deux servomoteurs orientent la nacelle.",
@@ -139,7 +139,7 @@ window.SITE = {
       ],
       photos: [{ src: "Capture_gimbal.png" }]
     },
-     {
+    {
       slug: "parking",
       title: { fr: "Gestion de parking sur FPGA", en: "FPGA parking management system" },
       domains: ["fpga"],
@@ -167,11 +167,11 @@ window.SITE = {
       ],
       photos: []
     },
-        {
+    {
       slug: "robot-vocal",
       title: { fr: "Robot IoT à commande vocale", en: "Voice-controlled IoT robot" },
       domains: ["iot"],
-      tags: ["Raspberry Pi", "ESP32", "Vosk", "LLaMA", "DC Motors", "BMC", "mqtt"],
+      tags: ["Raspberry Pi", "ESP32", "Vosk", "LLaMA", "DC Motors", "BMC", "MQTT"],
       planned: false,
       overview: {
         fr: "Robot IoT que l'on commande à la voix, construit autour de deux cartes : un Raspberry Pi, qui est le cerveau du système, et un ESP32, qui commande les moteurs de déplacement. Il combine la reconnaissance vocale Vosk et un modèle de langage LLaMA.",
@@ -183,24 +183,24 @@ window.SITE = {
         { fr: "Vosk pour la reconnaissance vocale", en: "Vosk for speech recognition" },
         { fr: "Modèle LLaMA intégré au robot", en: "LLaMA model integrated into the robot" }
       ],
-      photos: [{ src: "Robot_home.jpeg" }]   // le chemain de photo
+      photos: [{ src: "Robot_home.jpeg" }]
     },
     {
       slug: "domotique",
-      title: { fr: "Systeme de securite et controle de climatisation via une application mobile ", en: "Security and climate control system with a mobile app" },
+      title: { fr: "Système de sécurité et de contrôle de climatisation par application mobile", en: "Security and climate control system with a mobile app" },
       domains: ["iot"],
       tags: ["Angular", "Ionic", "Firebase", "Android", "ESP32", "EasyEDA", { fr: "Carte PCB", en: "PCB board" }, "SolidWorks"],
       planned: false,
       overview: {
-        fr: "le systeme est constituer par 2 boitier la premier a le role de securiter contre les incendie et Asphyxie par gaz et la deuxiemepour le controle de climatisation et son consomation en temps reel, stockées dans Firebase et exploitées par une application Angular et Ionic.",
-        en: "The system consists of two units: the first acts as a safety device against fire and gas asphyxiation, while the second controls the air conditioning system and monitors its real-time energy consumption."
+        fr: "Le système est composé de deux boîtiers : le premier assure la sécurité contre les incendies et l'asphyxie au gaz, le second commande la climatisation et suit sa consommation en temps réel. Les données sont stockées dans Firebase et exploitées par une application Angular et Ionic.",
+        en: "The system consists of two units: the first acts as a safety device against fire and gas asphyxiation, while the second controls the air conditioning and monitors its real-time energy consumption. Data is stored in Firebase and used by an Angular and Ionic app."
       },
       summary: [
-        { fr: "Deux ESP32 communiquant en HTTP", en: " Two ESP32 communicating over HTTP" },
+        { fr: "Deux ESP32 communiquant en HTTP", en: "Two ESP32 boards communicating over HTTP" },
         { fr: "Firebase pour le stockage des données", en: "Firebase for data storage" },
         { fr: "Application Angular et Ionic", en: "Angular and Ionic application" }
       ],
-      photos: [{src: "3D_boitie.png"}]
+      photos: [{ src: "3D_boitie.png" }]
     },
     {
       slug: "bras",
@@ -287,7 +287,7 @@ window.SITE = {
         { fr: "Exclusion via CMake des sources réseau C++ inutiles", en: "Excluded unneeded C++ networking sources via CMake" }
       ],
       photos: []
-    },
+    }
   ],
 
   /* COMPÉTENCES : une ligne par famille. Les éléments sont des textes simples. */
@@ -298,31 +298,30 @@ window.SITE = {
     { family: { fr: "Temps réel", en: "Real-time" }, items: ["FreeRTOS", "Zephyr"] },
     { family: { fr: "FPGA et HDL", en: "FPGA and HDL" }, items: ["VHDL", "Vivado", "ModelSim"] },
     { family: { fr: "Vision et IA embarquée", en: "Vision and embedded AI" }, items: ["OpenCV", "YOLO", "ONNX Runtime", { fr: "Déploiement edge AI", en: "Edge AI deployment" }] },
+    { family: { fr: "Robotique", en: "Robotics" }, items: ["ROS 2", "Gazebo", "SLAM"] },
     { family: { fr: "Conception PCB", en: "PCB design" }, items: ["EasyEDA"] },
     { family: { fr: "En exploration", en: "Exploring" }, items: [{ fr: "Agents IA", en: "AI agents" }, "ReAct", "LangChain", "RAG"] }
   ],
-   
-  /* PARCOURS : une ligne par étape, du plus ancien au plus récent. */
+
+  /* PARCOURS : une ligne par étape, du plus récent au plus ancien. */
   background: [
-     {
+    {
       period: { fr: "2024 – 2027 (en cours)", en: "2024 – 2027 (ongoing)" },
       role: { fr: "Cycle ingénieur", en: "Engineering degree" },
       desc: { fr: "Systèmes embarqués et IoT, Institut Supérieur d'Informatique (ISI), Université Tunis El Manar.", en: "Embedded Systems and IoT, Institut Supérieur d'Informatique (ISI), Université Tunis El Manar." }
     },
-    
     {
       period: "2021 – 2024",
       role: { fr: "Licence", en: "Bachelor's degree" },
       desc: { fr: "Systèmes embarqués, électronique et électrotechnique.", en: "Embedded systems, electronics and electrical engineering." }
     },
-     {
+    {
       period: "2021",
       role: { fr: "Baccalauréat sciences techniques", en: "Technical Sciences Baccalaureate" },
       desc: { fr: "Moyenne de 15,5/20.", en: "Overall grade of 15.5/20." }
     }
-    
   ],
-   
+
   /* CONTACT : label = le canal, text = ce qui est affiché, href = le lien.
      Sans href, le texte n'est pas cliquable. */
   contact: [
