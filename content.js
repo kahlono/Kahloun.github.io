@@ -126,7 +126,7 @@ window.SITE = {
       slug: "gimbal",
       title: { fr: "Nacelle laser de suivi de ballons", en: "Balloon-tracking laser gimbal" },
       domains: ["vision", "iot"],
-      tags: ["Jetson Nano", , "Servo Motors", "YOLOv5", "3D design" ],
+      tags: ["Jetson Nano", "Servo Motors", "YOLOv5", "3D design" ],
       planned: false,
       overview: {
         fr: "Nacelle à deux axes qui suit des ballons et pointe un laser sur eux. La détection repose sur YOLOv5, exécuté sur un Jetson Nano, et deux servomoteurs orientent la nacelle.",
@@ -167,29 +167,29 @@ window.SITE = {
       ],
       photos: []
     },
-    {
+        {
       slug: "robot-vocal",
       title: { fr: "Robot IoT à commande vocale", en: "Voice-controlled IoT robot" },
       domains: ["iot"],
-      tags: ["Raspberry Pi", "ESP32", "Vosk", "LLaMA", "DC Motors", "BMC"],
+      tags: ["Raspberry Pi", "ESP32", "Vosk", "LLaMA", "DC Motors", "BMC", "mqtt"],
       planned: false,
       overview: {
-        fr: "Robot IoT que l'on commande à la voix, construit par deux cartes un Raspberry Pi qui est le cerveau et la carte esp32 qui commandeles motors de deplacement. Il combine la commande vocale Vosk et un modèle de langage LLaMA.",
-        en: "An IoT robot controlled by voice, built with Raspberry Pi which is the brain of our system and esp32 that command our motors. It combines Vosk speech command with a LLaMA language model."
+        fr: "Robot IoT que l'on commande à la voix, construit autour de deux cartes : un Raspberry Pi, qui est le cerveau du système, et un ESP32, qui commande les moteurs de déplacement. Il combine la reconnaissance vocale Vosk et un modèle de langage LLaMA.",
+        en: "An IoT robot controlled by voice, built around two boards: a Raspberry Pi, the brain of the system, and an ESP32 that drives the movement motors. It combines Vosk speech recognition with a LLaMA language model."
       },
       summary: [
         { fr: "Raspberry Pi comme unité centrale du robot", en: "Raspberry Pi as the robot's central unit" },
-        { fr: "ESP32 pour la commnade des roues motrices",  en: "ESP32 for controlling the wheels " },
+        { fr: "ESP32 pour la commande des roues motrices", en: "ESP32 for controlling the drive wheels" },
         { fr: "Vosk pour la reconnaissance vocale", en: "Vosk for speech recognition" },
         { fr: "Modèle LLaMA intégré au robot", en: "LLaMA model integrated into the robot" }
       ],
-      photos: [{ src: "Robot_home.jpeg"}]
+      photos: [{ src: "Robot_home.jpeg" }]   // le chemain de photo
     },
     {
       slug: "domotique",
       title: { fr: "Systeme de securite et controle de climatisation via une application mobile ", en: "Security and climate control system with a mobile app" },
       domains: ["iot"],
-      tags: ["Angular", "Ionic", "Firebase", "Android", "ESP32", "EasyEDA", "Carte PCB", "SolidWorks"],
+      tags: ["Angular", "Ionic", "Firebase", "Android", "ESP32", "EasyEDA", { fr: "Carte PCB", en: "PCB board" }, "SolidWorks"],
       planned: false,
       overview: {
         fr: "le systeme est constituer par 2 boitier la premier a le role de securiter contre les incendie et Asphyxie par gaz et la deuxiemepour le controle de climatisation et son consomation en temps reel, stockées dans Firebase et exploitées par une application Angular et Ionic.",
@@ -200,7 +200,7 @@ window.SITE = {
         { fr: "Firebase pour le stockage des données", en: "Firebase for data storage" },
         { fr: "Application Angular et Ionic", en: "Angular and Ionic application" }
       ],
-      photos: []
+      photos: [src: "carte_pcb.jpg"]
     },
     {
       slug: "bras",
