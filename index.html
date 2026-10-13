@@ -49,6 +49,7 @@ a{color:var(--accent)}
 .btn{font:inherit;font-size:14px;line-height:1;color:var(--ink);background:transparent;border:1px solid var(--rule);border-radius:2px;padding:9px 12px;min-height:44px;cursor:pointer}
 .btn:hover{border-color:var(--ink)}
 .btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+a.btn{display:inline-flex;align-items:center;text-decoration:none}
 
 main{max-width:1120px;margin:0 auto;padding:0 24px}
 .cover{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;padding:56px 0;border-bottom:2px solid var(--ink);align-items:start}
@@ -122,6 +123,13 @@ h2.pt{margin:0 0 8px;font-weight:850;font-stretch:72%;font-size:clamp(36px,6vw,7
 .gallery a{display:block}
 .gallery img{width:100%;height:auto;display:block;border:1px solid var(--rule)}
 .gallery figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+
+/* documents (PDF) */
+.docs{display:grid;gap:32px}
+.doc h4{margin:0 0 10px;font-size:17px;font-weight:700}
+.doc iframe{display:block;width:100%;height:80vh;min-height:420px;border:1px solid var(--rule);background:#fff}
+.doc-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+
 .pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:16px;border-top:2px solid var(--ink)}
 
 footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px solid var(--ink);font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -140,6 +148,8 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
 @media (max-width:720px){
   main,.bar-in,footer{padding-left:18px;padding-right:18px}
   .cards{grid-template-columns:1fr}
+  .rev{display:none}
+  .doc iframe{display:none}
   table,thead,tbody,tr,td,th{display:block;width:100%}
   thead{position:absolute;left:-9999px}
   tr{border-top:2px solid var(--ink);padding:12px 0}
@@ -168,7 +178,8 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
 
   var UI = {
     fr: {
-      rev: "Rév.", revision: "révision", theme: "Thème", langBtn: "EN", skip: "Aller au contenu",
+      role: "Systèmes embarqués & IoT · Promotion 2027", footer: "© 2026 · Portfolio",
+      theme: "Thème", langBtn: "EN", skip: "Aller au contenu",
       nDesc: "Description", nProj: "Projets", nSkills: "Compétences", nBg: "Parcours", nContact: "Contact",
       features: "Caractéristiques", interests: "Domaines d'intérêt",
       figure: "Figure 1. Brochage : les compétences clés, détaillées dans la section Compétences.",
@@ -179,10 +190,12 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
       cap4: "Tableau 3. Informations de contact.", thChannel: "Canal", thCDetails: "Coordonnées",
       planned: "Planifié", back: "Retour aux projets", overview: "Aperçu", keyPoints: "Points clés",
       domain: "Domaine", platform: "Plateforme et outils", photos: "Photos",
+      documents: "Documents", download: "Télécharger", openTab: "Ouvrir dans un nouvel onglet",
       prev: "Projet précédent : ", next: "Projet suivant : "
     },
     en: {
-      rev: "Rev.", revision: "revision", theme: "Theme", langBtn: "FR", skip: "Skip to content",
+      role: "Embedded Systems & IoT · Class of 2027", footer: "© 2026 · Portfolio",
+      theme: "Theme", langBtn: "FR", skip: "Skip to content",
       nDesc: "Description", nProj: "Projects", nSkills: "Skills", nBg: "Background", nContact: "Contact",
       features: "Features", interests: "Areas of interest",
       figure: "Figure 1. Pin configuration: key skills, detailed in the Skills section.",
@@ -193,6 +206,7 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
       cap4: "Table 3. Contact information.", thChannel: "Channel", thCDetails: "Details",
       planned: "Planned", back: "Back to projects", overview: "Overview", keyPoints: "Key points",
       domain: "Domain", platform: "Platform and tools", photos: "Photos",
+      documents: "Documents", download: "Download", openTab: "Open in a new tab",
       prev: "Previous project: ", next: "Next project: "
     }
   };
@@ -237,8 +251,8 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
 
   function header() {
     return '<header class="bar"><div class="bar-in">'
-      + '<a class="mark" href="#top">' + esc(S.chip.name) + '</a>'
-      + '<span class="rev">' + u('rev') + ' ' + esc(S.revision) + '</span>'
+      + '<a class="mark" href="#top">' + esc(S.name) + '</a>'
+      + '<span class="rev">' + u('role') + '</span>'
       + '<nav aria-label="Sections">'
       + '<a href="#description">' + u('nDesc') + '</a>'
       + '<a href="#projets">' + u('nProj') + '</a>'
@@ -353,6 +367,19 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
       body += '<p><a href="' + href(l.href) + '" target="_blank" rel="noopener noreferrer">' + T(l.label) + '</a></p>';
     });
 
+    var docs = '';
+    if (p.documents && p.documents.length) {
+      docs = '<h3>' + u('documents') + '</h3><div class="docs">' + p.documents.map(function (d) {
+        var src = href(d.src);
+        return '<div class="doc"><h4>' + T(d.title) + '</h4>'
+          + (d.viewer === false ? '' : '<iframe src="' + src + '" title="' + T(d.title) + '" loading="lazy"></iframe>')
+          + '<div class="doc-actions">'
+          + '<a class="btn" href="' + src + '" download>' + u('download') + '</a>'
+          + '<a class="btn" href="' + src + '" target="_blank" rel="noopener">' + u('openTab') + '</a>'
+          + '</div></div>';
+      }).join('') + '</div>';
+    }
+
     var gal = '';
     if (p.photos && p.photos.length) {
       gal = '<h3>' + u('photos') + '</h3><div class="gallery">' + p.photos.map(function (ph) {
@@ -368,6 +395,7 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
       + '<div class="pgrid"><div class="pmain">' + body + '</div>'
       + '<aside><dl class="fiche"><dt>' + u('domain') + '</dt><dd>' + domainsOf(p) + '</dd>'
       + '<dt>' + u('platform') + '</dt><dd>' + tags(p.tags) + '</dd></dl></aside></div>'
+      + docs
       + gal
       + '<nav class="pn" aria-label="' + u('nProj') + '">'
       + (prev ? '<a href="#projet/' + esc(prev.slug) + '">' + u('prev') + T(prev.title) + '</a>' : '<span></span>')
@@ -378,7 +406,7 @@ footer{max-width:1120px;margin:0 auto;padding:28px 24px 48px;border-top:2px soli
   function page(main) {
     return '<a class="skip" href="#top">' + u('skip') + '</a>' + header()
       + '<main id="top">' + main + '</main>'
-      + '<footer><span>' + esc(S.name) + '</span><span>' + esc(S.chip.name) + ', ' + u('revision') + ' ' + esc(S.revision) + '</span></footer>';
+      + '<footer><span>' + esc(S.name) + '</span><span>' + u('footer') + '</span></footer>';
   }
 
   function route(scroll) {
