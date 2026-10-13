@@ -49,16 +49,16 @@ window.SITE = {
 
   about: [
     {
-      fr: "Étudiant en dernière année d'ingénierie Systèmes Embarqués à l'Institut Supérieur d'Informatique (ISI), Université Tunis El Manar, je construis des systèmes de bout en bout : conception de cartes, firmware en C et C++, communication entre appareils, puis intelligence artificielle sur la cible.",
+      fr: "Étudiant en dernière année d'ingénierie Systèmes Embarqués à l'Institut Supérieur d'Informatique (ISI), Université Tunis El Manar.",
       en: "I am a final-year Embedded Systems engineering student at the Institut Supérieur d'Informatique (ISI), Université Tunis El Manar. I build systems end to end: board design, C and C++ firmware, device-to-device communication, then artificial intelligence on the target."
     },
     {
-      fr: "J'ai co-dirigé le département Robotique et IoT du club FREEWAYS, où j'ai formé de nouveaux étudiants. J'ai aussi effectué un stage industriel en vision par ordinateur embarquée et edge AI.",
-      en: "I co-directed the Robotics and IoT department of the FREEWAYS club, where I trained new students. I also completed an industry internship in embedded computer vision and edge AI."
+      fr: "J’aime concevoir des systèmes qui associent matériel et logiciel, du développement embarqué en C/C++ et Python à l’intégration de capteurs, de plateformes électroniques et d’algorithmes d’intelligence artificielle. À travers mes projets académiques et personnels, j’ai acquis une expérience pratique avec les microcontrôleurs STM32 et ESP32, les plateformes Raspberry Pi, les FPGA et la vision par ordinateur.Curieux, autonome et motivé par les défis techniques, je cherche constamment à approfondir mes compétences et à transformer des idées innovantes en solutions concrètes, fiables et optimisées.",
+      en: "I enjoy designing systems that combine hardware and software, ranging from embedded development in C/C++ and Python to the integration of sensors, electronic platforms, and artificial intelligence algorithms. Through my academic and personal projects, I have gained practical experience with STM32 and ESP32 microcontrollers, Raspberry Pi platforms, FPGAs, and computer vision. Curious, self-reliant, and driven by technical challenges, I constantly seek to improve my skills and transform innovative ideas into concrete, reliable, and optimized solutions."
     }
   ],
 
-  /* Les catégories des filtres. La clé (iot, vision, fpga) est utilisée
+  /* Les catégories des filtres. La clé (iot, vision, fpga) est utiliséeDescrip
      dans le champ "domains" de chaque projet. */
   domains: {
     iot:    { fr: "Embarqué et IoT", en: "Embedded and IoT" },
@@ -119,6 +119,9 @@ window.SITE = {
             { code: "proc",         fr: "processeur (assemblage des modules)", en: "processor (top-level assembly)" }
           ]
         }
+      ],
+      documents: [
+          { titre: "Rapport technique (PDF)", fichier: "risc-processeur-rapport.pdf" }
       ],
       photos: []
     },
