@@ -116,8 +116,8 @@ window.SITE = {
           ]
         }
       ],
-      documents: [
-          { titre: "Rapport technique (PDF)", fichier: "risc-processeur-rapport.pdf" }
+      links: [
+            { label: { fr: "Lire le rapport technique (PDF)", en: "Read the technical report (PDF)" }, href: "risc-processeur-rapport.pdf" }
       ],
       photos: []
     },
