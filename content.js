@@ -16,8 +16,8 @@ window.SITE = {
     en: "Mohamed Omar Kahloun — Embedded Systems and IoT Engineer"
   },
   part: {
-    fr: "Fiche technique, ingénieur systèmes embarqués et IoT",
-    en: "Datasheet, embedded systems and IoT engineer"
+    fr: "Ingénieur systèmes embarqués et IoT",
+    en: "Embedded systems and IoT engineer"
   },
   tagline: {
     fr: "Je conçois des systèmes embarqués qui voient, décident et communiquent.",
@@ -29,13 +29,6 @@ window.SITE = {
      broches 7 à 12 = côté droit (de bas en haut). */
   chip: { name: "Kahloun", line1: "Embedded Systems", line2: "ISI 2027" },
   pins: ["STM32", "ESP32", "RPi", "Jetson", "UART", "SPI", "I2C", "CAN", "MQTT", "RTOS", "VHDL", "Edge AI"],
-
-  features: [
-    { fr: "Dernière année d'ingénierie Systèmes Embarqués à l'ISI, promotion 2027", en: "Final-year Embedded Systems engineering student at ISI, class of 2027" },
-    { fr: "Ancien co-directeur du département Robotique et IoT du club FREEWAYS", en: "Former Co-Director of the Robotics and IoT department, FREEWAYS club" },
-    { fr: "De la carte PCB à l'IA embarquée sur la cible", en: "From PCB boards to on-device embedded AI" },
-    { fr: "Français et anglais courants", en: "Fluent in French and English" }
-  ],
 
   interests: [
     { fr: "Robotique et IoT", en: "Robotics and IoT" },
@@ -52,8 +45,12 @@ window.SITE = {
       en: "I am a final-year Embedded Systems engineering student at the Institut Supérieur d'Informatique (ISI), Université Tunis El Manar. I build systems end to end: board design, C and C++ firmware, device-to-device communication, then artificial intelligence on the target."
     },
     {
-      fr: "Passionné par la concevoir des systèmes qui associent matériel et logiciel, du développement embarqué en C/C++ et Python à l’intégration de capteurs, de plateformes électroniques et d’algorithmes d’intelligence artificielle. À travers mes projets académiques et personnels, j’ai acquis une expérience pratique avec les microcontrôleurs STM32 et ESP32, les plateformes Raspberry Pi, les FPGA et la vision par ordinateur.Curieux, autonome et motivé par les défis techniques, je cherche constamment à approfondir mes compétences et à transformer des idées innovantes en solutions concrètes, fiables et optimisées.",
-      en: "I enjoy designing systems that combine hardware and software, ranging from embedded development in C/C++ and Python to the integration of sensors, electronic platforms, and artificial intelligence algorithms. Through my academic and personal projects, I have gained practical experience with STM32 and ESP32 microcontrollers, Raspberry Pi platforms, FPGAs, and computer vision. Curious, self-reliant, and driven by technical challenges, I constantly seek to improve my skills and transform innovative ideas into concrete, reliable, and optimized solutions."
+      fr: "Passionné par la concevoir des systèmes qui associent matériel et logiciel, du développement embarqué en C/C++ et Python à l’intégration de capteurs, de plateformes électroniques et d’algorithmes d’intelligence artificielle.",
+      en: "I enjoy designing systems that combine hardware and software, ranging from embedded development in C/C++ and Python to the integration of sensors, electronic platforms, and artificial intelligence algorithms."
+    },
+      {
+      fr: "À travers mes projets académiques et personnels, j’ai acquis une expérience pratique avec les microcontrôleurs STM32 et ESP32, les plateformes Raspberry Pi, les FPGA et la vision par ordinateur.Curieux, autonome et motivé par les défis techniques, je cherche constamment à approfondir mes compétences et à transformer des idées innovantes en solutions concrètes, fiables et optimisées.",
+      en: "Through my academic and personal projects, I have gained practical experience with STM32 and ESP32 microcontrollers, Raspberry Pi platforms, FPGAs, and computer vision. Curious, self-reliant, and driven by technical challenges, I constantly seek to improve my skills and transform innovative ideas into concrete, reliable, and optimized solutions."
     }
   ],
 
